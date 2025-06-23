@@ -23,6 +23,9 @@ class CardSelectionVC: UIViewController {
     
     func configureUI () {
         configureCardImageView()
+        configureStopButton()
+        configureRestartButton()
+        configurerulesButton()
     }
     
     func configureCardImageView () {
@@ -38,5 +41,37 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
+    func configureStopButton () {
+        view.addSubview(stopButton)
+        
+        NSLayoutConstraint.activate([
+            stopButton.topAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 30),
+            stopButton.widthAnchor.constraint(equalToConstant: 260),
+            stopButton.heightAnchor.constraint(equalToConstant: 50),
+            stopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+    }
+    
+    func configureRestartButton () {
+        view.addSubview(restartButton)
+        
+        NSLayoutConstraint.activate([
+            restartButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor, constant: 20),
+            restartButton.widthAnchor.constraint(equalToConstant: 115),
+            restartButton.heightAnchor.constraint(equalToConstant: 50),
+            restartButton.leadingAnchor.constraint(equalTo: stopButton.leadingAnchor),
+        ])
+    }
+    
+    func configurerulesButton () {
+        view.addSubview(rulesButton)
+        
+        NSLayoutConstraint.activate([
+            rulesButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor, constant: 20),
+            rulesButton.widthAnchor.constraint(equalToConstant: 115),
+            rulesButton.heightAnchor.constraint(equalToConstant: 50),
+            rulesButton.trailingAnchor.constraint(equalTo: stopButton.trailingAnchor),
+        ])
+    }
 
 }
